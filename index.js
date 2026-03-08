@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Allow specific front-end origins (Vite dev server + CRA)
-const allowedOrigins = ["http://localhost:3000", "http://localhost:5173"];
+const allowedOrigins = [ "https://versel-frontend-rho.vercel.app/", "http://localhost:5173"];
 app.use(cors({
     origin: allowedOrigins,
     credentials: true,
