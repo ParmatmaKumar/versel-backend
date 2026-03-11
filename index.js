@@ -1,4 +1,5 @@
 const express = require('express');
+
 const app = express();
 
 const userRouter = require('./router/User');
@@ -44,9 +45,13 @@ app.use('/api/v1/payments', paymentsRouter);
 app.use('/api/v1/course', courseRouter);
 
 // defult route
-app.get('/', (req, res) => {
-    res.send('Welcome to the Mega Project Backend API');
-});
+app.get("/", (req, res) => {
+  res.json({ message: "API working 🚀" })
+})
+
+// Handle favicon requests to prevent 404 errors
+app.get('/favicon.ico', (req, res) => res.status(204).end());
+app.get('/favicon.png', (req, res) => res.status(204).end());
 
 // Start the server
 app.listen(PORT, () => {
